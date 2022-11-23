@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:08:23 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/23 17:25:38 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/23 19:42:21 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ int	main(int argc,char *argv[])
 	struct	s_img	img;
 	struct s_map	map;
 	int		i;
-	int		x;
-	int		y;
 
-	x = 20;
-	y = 20;
+	/*
+	img.x = 20;
+	img.y = 20;
+	*/
 	printf("%s\n", argv[1]);
 	map.map = parssing_map(argv[1]);
 	i = 0;
@@ -53,13 +53,31 @@ int	main(int argc,char *argv[])
 		i++;
 	}
 	printf("\n");
+	printf("\n");
 	argc++;
 	win.mlx_ptr = mlx_init();
-	win.mlx_win = mlx_new_window(win.mlx_ptr, 500, 500, "test");
+	win.mlx_win = mlx_new_window(win.mlx_ptr, 1000, 1000, "test");
+	init_img(&img, &win);
+	
+
+	/*
 	img.fox = mlx_new_image(win.mlx_ptr, 20, 20);
-	img.fox = mlx_xpm_file_to_image(win.mlx_ptr, "sprite/Fox.xpm", &x, &y);
-	mlx_put_image_to_window(win.mlx_ptr, win.mlx_win, img.fox, 0, 0);
-	//first_print(map);
+	img.wall = mlx_new_image(win.mlx_ptr, 20, 20);
+	img.none = mlx_new_image(win.mlx_ptr, 20, 20);
+	img.item = mlx_new_image(win.mlx_ptr, 20, 20);
+	img.door = mlx_new_image(win.mlx_ptr, 20, 20);
+	img.fox = mlx_xpm_file_to_image(win.mlx_ptr, "sprite/Fox.xpm", &img.x, &img.y);
+	img.wall = mlx_xpm_file_to_image(win.mlx_ptr, "sprite/Wall.xpm", &img.x, &img.y);
+	img.item = mlx_xpm_file_to_image(win.mlx_ptr, "sprite/item.xpm", &img.x, &img.y);
+	img.door = mlx_xpm_file_to_image(win.mlx_ptr, "sprite/Door.xpm", &img.x, &img.y);
+	img.none = mlx_xpm_file_to_image(win.mlx_ptr, "sprite/none.xpm", &img.x, &img.y);
+	*/
+	printf("%p\n%p\n", &img.x, &img.y);
+
+
+
+
+	first_print(&img, &map, &win);
 	mlx_key_hook(win.mlx_win, deal_key, (void *)0);
 	mlx_loop(win.mlx_ptr);
 }
