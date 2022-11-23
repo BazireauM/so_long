@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:20:09 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/23 19:42:24 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/23 20:36:58 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ struct	s_win
 
 struct s_xy
 {
-	int x;
-	int y;
-}	s_xy;
+	int	x;
+	int	y;
+}	t_xy;
 
 char			**parssing_map(char *map);
 char			**append_final(char **final, char *tmp);
@@ -56,7 +56,7 @@ int				len_char_char(char **final);
 int				free_all_final(char **final);
 int				first_print(struct s_img *img, struct s_map *map,
 					struct s_win *win);
-struct s_img	init_img(struct s_img *img, struct s_win *win);
+void			init_img(struct s_img *img, struct s_win *win);
 void			display_choose(char c, struct s_img *img, struct s_xy *xy,
 					struct s_win *win);
 
