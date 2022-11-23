@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:20:09 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/21 17:21:43 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/23 01:29:37 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 # define SO_LONG_H
 
 # include <mlx.h>
+# include <unistd.h>
+# include <stdio.h>
 
 #endif
