@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:08:23 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/23 01:29:34 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/23 03:12:30 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	deal_key(int key, void *param)
 {
-	char c;
+	char	c;
 
 	if (key == 13)
 		c = 'w';
@@ -33,8 +33,9 @@ int	deal_key(int key, void *param)
 	return (0);
 }
 
-int	main(void)
+int	main(int argc,char *argv[])
 {
+	/*
 	void	*test;
 	void	*init;
 	void	*image;
@@ -43,6 +44,20 @@ int	main(void)
 
 	x = 20;
 	y = 20;
+	*/
+	char	**map;
+	int		i;
+	printf("%s\n", argv[1]);
+	map = parssing_map(argv[1]);
+	i = 0;
+	while (map[i])
+	{
+		printf("%s", map[i]);
+		i++;
+	}
+	printf("\n");
+	argc++;
+	/*
 	init = mlx_init();
 	test = mlx_new_window(init, 500, 500, "test");
 	image = mlx_new_image(init, 20, 20);
@@ -51,4 +66,5 @@ int	main(void)
 	mlx_put_image_to_window(init, test, image, 100, 100);
 	mlx_key_hook(test, deal_key, (void *)0);
 	mlx_loop(init);
+	*/
 }
