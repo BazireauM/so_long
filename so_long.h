@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:20:09 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/24 02:32:13 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/24 04:39:43 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ struct	s_map
 	int		lenx;
 	int		leny;
 	char	**map;
-	int		nb_item;
-	int		collected;
 }	t_map;
 
 struct	s_img
@@ -73,5 +71,6 @@ int			mov_right(struct s_all *all);
 int			mov_up(struct s_all *all);
 int			mov_down(struct s_all *all);
 struct s_xy	search_pos(struct s_all *all);
+int			nb_item(struct s_all *all);
 
 #endif

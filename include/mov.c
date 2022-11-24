@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 00:32:00 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/24 02:32:15 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/24 04:39:12 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	mov_left(struct s_all *all)
 	struct s_xy	pos;
 
 	pos = search_pos(all);
-	if (all->map.map[pos.y][pos.x - 1] != '1')
+	if (all->map.map[pos.y][pos.x - 1] != '1' &&
+		all->map.map[pos.y][pos.x - 1] != 'E')
 	{
 		all->map.map[pos.y][pos.x - 1] = 'P';
 		all->map.map[pos.y][pos.x] = '0';
@@ -26,6 +27,8 @@ int	mov_left(struct s_all *all)
 		mlx_put_image_to_window(all->win.mlx_ptr, all->win.mlx_win,
 			all->img.fox, (pos.x - 1) * 20, pos.y * 20);
 	}
+	if (all->map.map[pos.y][pos.x - 1] == 'E' && nb_item(all) == 0)
+		exit(1);
 	return (0);
 }
 
@@ -34,7 +37,8 @@ int	mov_right(struct s_all *all)
 	struct s_xy	pos;
 
 	pos = search_pos(all);
-	if (all->map.map[pos.y][pos.x + 1] != '1')
+	if (all->map.map[pos.y][pos.x + 1] != '1' &&
+		all->map.map[pos.y][pos.x + 1] != 'E')
 	{
 		all->map.map[pos.y][pos.x + 1] = 'P';
 		all->map.map[pos.y][pos.x] = '0';
@@ -43,6 +47,8 @@ int	mov_right(struct s_all *all)
 		mlx_put_image_to_window(all->win.mlx_ptr, all->win.mlx_win,
 			all->img.fox, (pos.x + 1) * 20, pos.y * 20);
 	}
+	if (all->map.map[pos.y][pos.x + 1] == 'E' && nb_item(all) == 0)
+		exit(1);
 	return (0);
 }
 
@@ -51,7 +57,8 @@ int	mov_up(struct s_all *all)
 	struct s_xy	pos;
 
 	pos = search_pos(all);
-	if (all->map.map[pos.y - 1][pos.x] != '1')
+	if (all->map.map[pos.y - 1][pos.x] != '1' &&
+		all->map.map[pos.y - 1][pos.x] != 'E')
 	{
 		all->map.map[pos.y - 1][pos.x] = 'P';
 		all->map.map[pos.y][pos.x] = '0';
@@ -60,6 +67,8 @@ int	mov_up(struct s_all *all)
 		mlx_put_image_to_window(all->win.mlx_ptr, all->win.mlx_win,
 			all->img.fox, pos.x * 20, (pos.y - 1) * 20);
 	}
+	if (all->map.map[pos.y - 1][pos.x] == 'E' && nb_item(all) == 0)
+		exit(1);
 	return (0);
 }
 
@@ -68,7 +77,8 @@ int	mov_down(struct s_all *all)
 	struct s_xy	pos;
 
 	pos = search_pos(all);
-	if (all->map.map[pos.y + 1][pos.x] != '1')
+	if (all->map.map[pos.y + 1][pos.x] != '1' &&
+		all->map.map[pos.y + 1][pos.x] != 'E')
 	{
 		all->map.map[pos.y + 1][pos.x] = 'P';
 		all->map.map[pos.y][pos.x] = '0';
@@ -77,6 +87,8 @@ int	mov_down(struct s_all *all)
 		mlx_put_image_to_window(all->win.mlx_ptr, all->win.mlx_win,
 			all->img.fox, pos.x * 20, (pos.y + 1) * 20);
 	}
+	if (all->map.map[pos.y + 1][pos.x] == 'E' && nb_item(all) == 0)
+		exit(1);
 	return (0);
 }
 
