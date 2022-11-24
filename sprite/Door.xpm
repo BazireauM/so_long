@@ -2,7 +2,7 @@
 static char *item[] = {
 /* columns rows colors chars-per-pixel */
 "20 20 2 1 ",
-"  c none",
+"  c Black",
 ". c green",
 /* pixels */
 "                    ",

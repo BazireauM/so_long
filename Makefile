@@ -4,6 +4,8 @@ SRCS	=	get_next_line/get_next_line.c\
 			get_next_line/get_next_line_utils.c\
 			include/parssing.c\
 			include/display.c\
+			include/mov.c\
+			include/mov_utils.c\
 			main.c
 
 OBJS	=	$(SRCS:.c=.o)

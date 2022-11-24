@@ -6,30 +6,27 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:08:23 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/23 20:36:56 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/24 01:19:29 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	deal_key(int key, void *param)
+int	deal_key(int key, struct s_all *all)
 {
 	char	c;
 
 	if (key == 13)
-		c = 'w';
+		mov_up(all);
 	else if (key == 2)
-		c = 'd';
+		mov_right(all);
 	else if (key == 1)
-		c = 's';
+		mov_down(all);
 	else if (key == 0)
-		c = 'a';
+		mov_left(all);
 	else if (key == 53)
-		c = 'e';
+		exit(1);
 	write(1, &c, 1);
-	return (0);
-	printf("\n%p\n", param);
-	printf("%d\n", key);
 	return (0);
 }
 
@@ -38,10 +35,13 @@ int	main(int argc, char *argv[])
 	struct s_win	win;
 	struct s_img	img;
 	struct s_map	map;
+	struct s_all	all;
 	int				i;
 
 	img.x = 20;
 	img.y = 20;
+	if (argc != 2)
+		return (0);
 	printf("%s\n", argv[1]);
 	map.map = parssing_map(argv[1]);
 	i = 0;
@@ -51,12 +51,16 @@ int	main(int argc, char *argv[])
 		i++;
 	}
 	printf("\n");
-	argc++;
 	win.mlx_ptr = mlx_init();
-	win.mlx_win = mlx_new_window(win.mlx_ptr, 1000, 1000, "test");
+	win.mlx_win = mlx_new_window(win.mlx_ptr, 700, 700, "so long");
 	init_img(&img, &win);
 	first_print(&img, &map, &win);
-	mlx_key_hook(win.mlx_win, deal_key, (void *)0);
+	all.win = win;
+	all.img = img;
+	all.map = map;
+	printf("%p\n", all.win.mlx_ptr);
+	printf("%p\n", win.mlx_ptr);
+	mlx_key_hook(win.mlx_win, deal_key, &all);
 	mlx_loop(win.mlx_ptr);
 }
 

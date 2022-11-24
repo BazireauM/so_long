@@ -2,7 +2,7 @@
 static char *Fox[] = {
 /* columns rows colors chars-per-pixel */
 "20 20 8 1 ",
-"  c None",
+"  c Black",
 ". c #2F2F2E",
 "X c #3B3B39",
 "o c #4F4F4E",

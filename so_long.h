@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:20:09 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/23 20:36:58 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/24 02:32:13 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ struct	s_map
 	int		lenx;
 	int		leny;
 	char	**map;
+	int		nb_item;
+	int		collected;
 }	t_map;
 
 struct	s_img
@@ -50,14 +52,26 @@ struct s_xy
 	int	y;
 }	t_xy;
 
-char			**parssing_map(char *map);
-char			**append_final(char **final, char *tmp);
-int				len_char_char(char **final);
-int				free_all_final(char **final);
-int				first_print(struct s_img *img, struct s_map *map,
-					struct s_win *win);
-void			init_img(struct s_img *img, struct s_win *win);
-void			display_choose(char c, struct s_img *img, struct s_xy *xy,
-					struct s_win *win);
+struct s_all
+{
+	struct s_win	win;
+	struct s_img	img;
+	struct s_map	map;
+}	t_all;
+
+char		**parssing_map(char *map);
+char		**append_final(char **final, char *tmp);
+int			len_char_char(char **final);
+int			free_all_final(char **final);
+int			first_print(struct s_img *img, struct s_map *map,
+				struct s_win *win);
+void		init_img(struct s_img *img, struct s_win *win);
+void		display_choose(char c, struct s_img *img, struct s_xy *xy,
+				struct s_win *win);
+int			mov_left(struct s_all *all);
+int			mov_right(struct s_all *all);
+int			mov_up(struct s_all *all);
+int			mov_down(struct s_all *all);
+struct s_xy	search_pos(struct s_all *all);
 
 #endif
