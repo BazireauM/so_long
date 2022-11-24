@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:20:09 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/24 04:39:43 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/24 19:56:46 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,10 @@ int			mov_up(struct s_all *all);
 int			mov_down(struct s_all *all);
 struct s_xy	search_pos(struct s_all *all);
 int			nb_item(struct s_all *all);
+size_t		ft_strlen(char *s);
+int			test_map(struct s_map *map);
+int			rectangle(struct s_map *map);
+int			surrounded(struct s_map *map);
+int			test_char(struct s_map *map);
 
 #endif

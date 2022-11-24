@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:08:23 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/24 01:19:29 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/24 19:56:44 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,19 @@ int	main(int argc, char *argv[])
 		i++;
 	}
 	printf("\n");
-	win.mlx_ptr = mlx_init();
-	win.mlx_win = mlx_new_window(win.mlx_ptr, 700, 700, "so long");
-	init_img(&img, &win);
-	first_print(&img, &map, &win);
-	all.win = win;
-	all.img = img;
-	all.map = map;
-	printf("%p\n", all.win.mlx_ptr);
-	printf("%p\n", win.mlx_ptr);
-	mlx_key_hook(win.mlx_win, deal_key, &all);
-	mlx_loop(win.mlx_ptr);
+	if (test_map(&map) != 1)
+	{
+		win.mlx_ptr = mlx_init();
+		win.mlx_win = mlx_new_window(win.mlx_ptr, map.lenx * 20,
+				map.leny * 20, "so long");
+		init_img(&img, &win);
+		first_print(&img, &map, &win);
+		all.win = win;
+		all.img = img;
+		all.map = map;
+		mlx_key_hook(win.mlx_win, deal_key, &all);
+		mlx_loop(win.mlx_ptr);
+	}
 }
 
 void	init_img(struct s_img *img, struct s_win *win)
