@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:20:09 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/24 19:56:46 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/24 20:22:57 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,8 @@ int			test_map(struct s_map *map);
 int			rectangle(struct s_map *map);
 int			surrounded(struct s_map *map);
 int			test_char(struct s_map *map);
+int			test_char_p(struct s_map *map);
+int			test_char_e(struct s_map *map);
+int			test_char_c(struct s_map *map);
 
 #endif

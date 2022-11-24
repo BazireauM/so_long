@@ -7,6 +7,7 @@ SRCS	=	get_next_line/get_next_line.c\
 			include/mov.c\
 			include/mov_utils.c\
 			include/test_map.c\
+			include/test_char.c\
 			main.c
 
 OBJS	=	$(SRCS:.c=.o)

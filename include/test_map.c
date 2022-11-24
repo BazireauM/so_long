@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 18:17:28 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/24 19:56:42 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/24 20:22:22 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,6 @@ int	test_map(struct s_map *map)
 		return (1);
 	//chemin possible
 	return (0);
-}
-
-int	test_char(struct s_map *map)
-{
-	map->lenx++;
-	map->lenx--;
-	return(0);
 }
 
 int	rectangle(struct s_map *map)
