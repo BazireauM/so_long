@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:20:09 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/24 20:22:57 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/25 02:03:51 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,8 @@ int			test_char(struct s_map *map);
 int			test_char_p(struct s_map *map);
 int			test_char_e(struct s_map *map);
 int			test_char_c(struct s_map *map);
+int			test_way(struct s_map *map);
+int			ft_exit(struct s_all *all);
+char		**cpy_map(struct s_map *map);
 
 #endif

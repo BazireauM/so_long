@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:08:23 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/24 20:06:40 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/25 02:03:49 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ int	deal_key(int key, struct s_all *all)
 	else if (key == 53)
 		exit(1);
 	write(1, &c, 1);
+	return (0);
+}
+
+int	ft_exit(struct s_all *all)
+{
+	printf("test\n");
+	all->map.map[0][0] = '1';
+	exit(1);
 	return (0);
 }
 
@@ -62,6 +70,7 @@ int	main(int argc, char *argv[])
 		all.img = img;
 		all.map = map;
 		mlx_key_hook(win.mlx_win, deal_key, &all);
+		mlx_hook(win.mlx_win, 17, 0L, ft_exit, &all);
 		mlx_loop(win.mlx_ptr);
 	}
 }

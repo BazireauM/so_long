@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 18:17:28 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/24 20:22:22 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/25 01:39:32 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	test_map(struct s_map *map)
 	if (test_char(map) == 1)
 		return (1);
 	//chemin possible
+	if (test_way(map) == 1)
+		return (1);
 	return (0);
 }
 
