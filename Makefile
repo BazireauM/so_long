@@ -10,6 +10,21 @@ SRCS	=	get_next_line/get_next_line.c\
 			include/test_char.c\
 			include/test_way.c\
 			include/test_way_utils.c\
+			ft_printf/ft_printf.c\
+			ft_printf/choose_%.c\
+			ft_printf/choose_d.c\
+			ft_printf/choose_c.c\
+			ft_printf/choose_p.c\
+			ft_printf/choose_s.c\
+			ft_printf/choose_type.c\
+			ft_printf/choose_u.c\
+			ft_printf/choose_x.c\
+			ft_printf/choose_xmaj.c\
+			ft_printf/ft_itoa_u.c\
+			ft_printf/ft_parssing_input.c\
+			ft_printf/ft_putnbr_base.c\
+			ft_printf/ft_itoa.c\
+			ft_printf/ft_putstr_fd.c\
 			main.c
 
 OBJS	=	$(SRCS:.c=.o)

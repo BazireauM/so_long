@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:20:09 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/25 04:10:57 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/25 20:27:53 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include "get_next_line/get_next_line.h"
+# include "ft_printf/ft_printf.h"
 
 struct	s_map
 {
