@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 01:39:43 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/25 03:33:00 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/25 04:10:52 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	test_way(struct s_map *map)
 	map_cp = cpy_map(map);
 	map_cp = init_shearch_way(map_cp);
 	while (search_way(map_cp) == 1)
+		search_way(map_cp);
 	if (count_e_and_c(map_cp) != 0)
 		return (1);
 	return (0);

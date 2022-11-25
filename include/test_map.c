@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 18:17:28 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/25 03:37:48 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/25 04:10:55 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,27 @@ int	test_map(struct s_map *map)
 {
 	//carte rectangle
 	if (rectangle(map) == 1)
+	{
+		printf("error 1\n");
 		return (1);
+	}
 	//carte ferme
 	if (surrounded(map) == 1)
+	{
+		printf("error 2\n");
 		return (1);
+	}
 	//test 1 sortie, au moin 1 item, 1 position de depart
 	if (test_char(map) == 1)
+	{
+		printf("error 3\n");
 		return (1);
+	}
 	//chemin possible
 	if (test_way(map) == 1)
-		return (1);
+	{
+		printf("error 4\n");
+	}
 	return (0);
 }
 
