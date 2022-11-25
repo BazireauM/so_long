@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 01:39:43 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/25 02:21:50 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/25 03:33:00 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 int	test_way(struct s_map *map)
 {
-	int		i;
 	char	**map_cp;
 
 	map_cp = cpy_map(map);
 	map_cp = init_shearch_way(map_cp);
-	i = 0;
-	while (i == 1)
-	{
-		//i = search_way(map_cp);
-	}
-	// if count_E_and_C == 0 return (0) else return (1)
+	while (search_way(map_cp) == 1)
+	if (count_e_and_c(map_cp) != 0)
+		return (1);
 	return (0);
 }
 
@@ -50,6 +46,26 @@ int	search_way(char **map_cp)
 
 int test_new_case(char **map_cp, int i, int b)
 {
+	int a;
+
+	a = 0;
+	if (map_cp[i][b] == '3')
+	{
+		if ((map_cp[i + 1][b] == '1' && map_cp[i - 1][b] == '1' &&
+				map_cp[i][b + 1] == '1' && map_cp[i][b - 1] == '1' ) ||
+				(map_cp[i + 1][b] == '3' && map_cp[i - 1][b] == '3' &&
+				map_cp[i][b + 1] == '3' && map_cp[i][b - 1] == '3'))
+			a = 1;
+		if (map_cp[i + 1][b] != '1')
+			map_cp[i + 1][b] = '3';
+		if (map_cp[i - 1][b] != '1')
+			map_cp[i - 1][b] = '3';
+		if (map_cp[i][b + 1] != '1')
+			map_cp[i][b + 1] = '3';
+		if (map_cp[i][b - 1] != '1')
+			map_cp[i][b - 1] = '3';
+		return (a);
+	}
 	return (0);
 }
 
@@ -85,13 +101,13 @@ char	**init_shearch_way(char **map_cp)
 	int	b;
 
 	i = 0;
-	while (map[i])
+	while (map_cp[i])
 	{
 		b = 0;
-		while (map[i][b])
+		while (map_cp[i][b])
 		{
-			if (map[i][b] == 'P')
-				map[i][b] = '3';
+			if (map_cp[i][b] == 'P')
+				map_cp[i][b] = '3';
 			b++;
 		}
 		i++;
