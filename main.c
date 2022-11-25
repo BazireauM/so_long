@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:08:23 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/25 02:03:49 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/25 21:16:26 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ int	main(int argc, char *argv[])
 	img.y = 20;
 	if (argc != 2)
 		return (0);
+	if (test_file(argv[1]) == 1)
+	{
+		ft_printf("error files\n");
+		return (0);
+	}
 	printf("%s\n", argv[1]);
 	map.map = parssing_map(argv[1]);
 	i = 0;

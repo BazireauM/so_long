@@ -25,6 +25,7 @@ SRCS	=	get_next_line/get_next_line.c\
 			ft_printf/ft_putnbr_base.c\
 			ft_printf/ft_itoa.c\
 			ft_printf/ft_putstr_fd.c\
+			include/test_file.c\
 			main.c
 
 OBJS	=	$(SRCS:.c=.o)

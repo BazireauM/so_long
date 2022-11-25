@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:20:09 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/25 20:27:53 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/25 21:16:30 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ char		**init_shearch_way(char **map_cp);
 int			search_way(char **map_cp);
 int			test_new_case(char **map_cp, int i, int b);
 int			count_e_and_c(char **map_cp);
+int			test_file(char *s);
 
 #endif
