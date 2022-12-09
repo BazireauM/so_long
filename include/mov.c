@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 00:32:00 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/25 02:21:52 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/12/09 11:52:35 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,15 @@ int	mov_left(struct s_all *all)
 			all->img.none, pos.x * 20, pos.y * 20);
 		mlx_put_image_to_window(all->win.mlx_ptr, all->win.mlx_win,
 			all->img.fox, (pos.x - 1) * 20, pos.y * 20);
+		printf("%d\n", all->mov);
+		all->mov++;
 	}
 	if (all->map.map[pos.y][pos.x - 1] == 'E' && nb_item(all) == 0)
+	{
+		printf("%d\n", all->mov);
+		all->mov++;
 		exit(1);
+	}
 	return (0);
 }
 
@@ -46,9 +52,15 @@ int	mov_right(struct s_all *all)
 			all->img.none, pos.x * 20, pos.y * 20);
 		mlx_put_image_to_window(all->win.mlx_ptr, all->win.mlx_win,
 			all->img.fox, (pos.x + 1) * 20, pos.y * 20);
+		printf("%d\n", all->mov);
+		all->mov++;
 	}
 	if (all->map.map[pos.y][pos.x + 1] == 'E' && nb_item(all) == 0)
+	{
+		printf("%d\n", all->mov);
+		all->mov++;
 		exit(1);
+	}
 	return (0);
 }
 
@@ -66,9 +78,15 @@ int	mov_up(struct s_all *all)
 			all->img.none, pos.x * 20, pos.y * 20);
 		mlx_put_image_to_window(all->win.mlx_ptr, all->win.mlx_win,
 			all->img.fox, pos.x * 20, (pos.y - 1) * 20);
+		printf("%d\n", all->mov);
+		all->mov++;
 	}
 	if (all->map.map[pos.y - 1][pos.x] == 'E' && nb_item(all) == 0)
+	{
+		printf("%d\n", all->mov);
+		all->mov++;
 		exit(1);
+	}
 	return (0);
 }
 
@@ -86,9 +104,15 @@ int	mov_down(struct s_all *all)
 			all->img.none, pos.x * 20, pos.y * 20);
 		mlx_put_image_to_window(all->win.mlx_ptr, all->win.mlx_win,
 			all->img.fox, pos.x * 20, (pos.y + 1) * 20);
+		printf("%d\n", all->mov);
+		all->mov++;
 	}
 	if (all->map.map[pos.y + 1][pos.x] == 'E' && nb_item(all) == 0)
+	{
+		printf("%d\n", all->mov);
+		all->mov++;
 		exit(1);
+	}
 	return (0);
 }
 

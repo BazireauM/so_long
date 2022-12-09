@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 01:39:43 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/25 19:37:25 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/12/09 11:20:13 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	test_way(struct s_map *map)
 {
 	char	**map_cp;
-	int i;
+	int		i;
 
 	i = 1;
 	map_cp = cpy_map(map);
@@ -51,9 +51,9 @@ int	search_way(char **map_cp)
 	return (0);
 }
 
-int test_new_case(char **map_cp, int i, int b)
+int	test_new_case(char **map_cp, int i, int b)
 {
-	int a;
+	int	a;
 
 	a = 0;
 	if (map_cp[i][b] == '3')

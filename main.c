@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:08:23 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/25 21:16:26 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/12/09 12:08:35 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,25 @@ int	deal_key(int key, struct s_all *all)
 
 int	ft_exit(struct s_all *all)
 {
-	printf("test\n");
 	all->map.map[0][0] = '1';
 	exit(1);
 	return (0);
+}
+
+void	main2(struct s_all *all, struct s_win *win, struct s_img *img,
+		struct s_map *map)
+{
+	win->mlx_ptr = mlx_init();
+	win->mlx_win = mlx_new_window(win->mlx_ptr, map->lenx * 20,
+			map->leny * 20, "so long");
+	init_img(img, win);
+	first_print(img, map, win);
+	all->win = *win;
+	all->img = *img;
+	all->map = *map;
+	mlx_key_hook(win->mlx_win, deal_key, all);
+	mlx_hook(win->mlx_win, 17, 0L, ft_exit, all);
+	mlx_loop(win->mlx_ptr);
 }
 
 int	main(int argc, char *argv[])
@@ -44,10 +59,10 @@ int	main(int argc, char *argv[])
 	struct s_img	img;
 	struct s_map	map;
 	struct s_all	all;
-	int				i;
 
 	img.x = 20;
 	img.y = 20;
+	all.mov = 1;
 	if (argc != 2)
 		return (0);
 	if (test_file(argv[1]) == 1)
@@ -57,27 +72,8 @@ int	main(int argc, char *argv[])
 	}
 	printf("%s\n", argv[1]);
 	map.map = parssing_map(argv[1]);
-	i = 0;
-	while (map.map[i])
-	{
-		printf("%s", map.map[i]);
-		i++;
-	}
-	printf("\n");
 	if (test_map(&map) != 1)
-	{
-		win.mlx_ptr = mlx_init();
-		win.mlx_win = mlx_new_window(win.mlx_ptr, map.lenx * 20,
-				map.leny * 20, "so long");
-		init_img(&img, &win);
-		first_print(&img, &map, &win);
-		all.win = win;
-		all.img = img;
-		all.map = map;
-		mlx_key_hook(win.mlx_win, deal_key, &all);
-		mlx_hook(win.mlx_win, 17, 0L, ft_exit, &all);
-		mlx_loop(win.mlx_ptr);
-	}
+		main2(&all, &win, &img, &map);
 }
 
 void	init_img(struct s_img *img, struct s_win *win)

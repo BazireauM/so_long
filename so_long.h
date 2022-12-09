@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:20:09 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/25 21:16:30 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/12/09 12:09:15 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ struct s_all
 	struct s_win	win;
 	struct s_img	img;
 	struct s_map	map;
+	int				mov;
 }	t_all;
 
 char		**parssing_map(char *map);
@@ -89,5 +90,7 @@ int			search_way(char **map_cp);
 int			test_new_case(char **map_cp, int i, int b);
 int			count_e_and_c(char **map_cp);
 int			test_file(char *s);
+void		main2(struct s_all *all, struct s_win *win,
+				struct s_img *img, struct s_map *map);
 
 #endif

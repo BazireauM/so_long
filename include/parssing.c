@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 01:44:38 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/23 20:36:50 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/12/09 12:09:13 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ char	**append_final(char **final, char *tmp)
 		i++;
 	}
 	tmp2[i] = NULL;
-	//free_all_final(final);
 	final = malloc(sizeof(char *) * (len_char_char(tmp2) + 2));
 	if (!final)
 	{
